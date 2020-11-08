@@ -3,7 +3,36 @@
 }
 
 div {
-    font-size: 25px;
+    font-size: 18px;
     color: slateblue;
-    margin-left: 15%;
+    margin-left: 5%;
+}
+
+input {
+    border-radius: 5px;
+}
+
+button {
+    color: white;
+    font-size: 17px;
+    background: blue;
+    padding: 7px 12px;
+    border-radius: 5px;
+}
+
+table {
+    margin: 15%;
+    width: 70%;
+}
+
+.td-btn {
+    width: 15%;
+}
+
+.td-info {
+    width: 70%;
+}
+
+.td-pic {
+    width: 15%;
 }

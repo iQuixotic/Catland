@@ -1,16 +1,16 @@
 [
     {
-        "_id": "1",
+        "_id": 1,
         "color":"red",
         "name":"Ted"
     },
     {
-        "_id": "2",
+        "_id": 2,
         "color":"blue",
         "name":"Chris"
     },
     {
-        "_id": "3",
+        "_id": 3,
         "color":"Purple",
         "name":"Angry Anky"
     }
