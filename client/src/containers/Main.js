@@ -16,8 +16,8 @@ class Main extends React.Component {
       }],
       loading: false,
     }
-    this.componentWillMount = () => {
-      this.getAllCats()
+    this.componentDidMount = () => {
+    //   this.getAllCats()
     }
   }
 

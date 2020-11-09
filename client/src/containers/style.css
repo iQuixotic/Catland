@@ -1,23 +1,79 @@
+html {
+    font-size: 20px;
+}
+
+
 .cats {
     background: blue;
 }
 
-div {
-    font-size: 18px;
-    color: slateblue;
-    margin-left: 5%;
-}
 
 input {
+    border: 1px solid gray;
+    padding: 5px;
+    margin: 10px;
+    width: 40%;
+    font-size: 20px;
     border-radius: 5px;
 }
 
-button {
-    color: white;
-    font-size: 17px;
-    background: blue;
-    padding: 7px 12px;
+input:focus {
+    outline: none;
+    box-shadow: 1px 0 10px 0 chartreuse;
+}
+
+
+.addition-section {
+    margin: 15px 15%;
+    width: 70%;
+    text-align: center;
+}
+
+.addition-inputs {
+
+}
+
+.addition-section-btn {
+    text-align: center;
+}
+
+.addition-section-btn button{
+    width: 70%;
+    margin:  10px 15%;
+    background-color: darkblue;
+    border-radius: 10px;
+}   
+.add-successful {
+    color: green;
+    padding: 15px 5%;
+    font-size: 18px;
+    background-color: rgb(178, 226, 178);
     border-radius: 5px;
+    width: 70%;
+    margin: 10px 10%;
+}
+
+.add-unsuccessful {
+    color: red;
+    padding: 15px 5%;
+    font-size: 18px;
+    background-color: rgb(209, 190, 190);
+    border-radius: 5px;
+    width: 70%;
+    margin: 10px 10%;
+  
+}
+
+button:hover {
+    cursor: pointer;
+    color: red;
+}
+button {
+    color: rgb(32, 155, 155);
+    font-size: 17px;
+    background: rgba(0, 0, 255, 0);
+    padding: 7px 12px;
+    border: none;
 }
 
 table {
@@ -25,12 +81,13 @@ table {
     width: 70%;
 }
 
-.td-btn {
-    width: 15%;
+.td-btn div{
+    display: flex;
+    width: 10%;
 }
 
 .td-info {
-    width: 70%;
+    width: 75%;
 }
 
 .td-pic {
