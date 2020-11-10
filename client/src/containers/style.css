@@ -37,12 +37,23 @@ input:focus {
     text-align: center;
 }
 
-.addition-section-btn button{
+.addition-section-btn button,
+.edit-section-btn {
     width: 70%;
     margin:  10px 15%;
+    padding: 10px;
     background-color: darkblue;
+    color: whitesmoke;
+    font-size: 18px;
+    border: none;
+    outline: none;
     border-radius: 10px;
 }   
+.addition-section-btn button:focus,
+.edit-section-btn:focus {
+    box-shadow: 0px 1px 10px 0px gray;
+}
+
 .add-successful {
     color: green;
     padding: 15px 5%;
@@ -64,16 +75,15 @@ input:focus {
   
 }
 
-button:hover {
-    cursor: pointer;
-    color: red;
-}
-button {
-    color: rgb(32, 155, 155);
-    font-size: 17px;
+.fa-btn {
     background: rgba(0, 0, 255, 0);
-    padding: 7px 12px;
     border: none;
+    font-size: 17px;
+    color: rgb(32, 155, 155);
+}
+
+.fa-btn:hover {
+    color: rebeccapurple;
 }
 
 table {
@@ -81,15 +91,18 @@ table {
     width: 70%;
 }
 
-.td-btn div{
-    display: flex;
-    width: 10%;
+.td-btn {
+    /* width: 10%; */
+    /* display: flex; */
+    /* float: right; */
 }
 
 .td-info {
-    width: 75%;
+    padding: 20px;
+    width: 70%;
 }
 
 .td-pic {
     width: 15%;
 }
+

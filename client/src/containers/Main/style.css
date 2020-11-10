@@ -1,0 +1,39 @@
+img {
+    width: 80%;
+    margin: 50px 10%;
+    border-radius: 50px 500px 150px;
+}
+
+.main {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(1, 1, 36);
+}
+
+nav {
+    position: absolute;
+    left: 20%;
+    top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 320px;
+    margin: 150px 50px;
+    color: white;
+    /* background-color: green; */
+}
+
+.nav-item {
+    font-size: 30px;
+    padding: 7px 0px 7px 80px;
+    -ms-transform: skewY(340deg); /* IE 9 */
+    transform: skewY(340deg);
+    color: rgb(218, 218, 218);
+    background-color: rgba(124, 0, 128, 0.4);
+    width: 250px;
+    border-radius: 100px 50px;
+}

@@ -3,9 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import data from '../main/cats.json'
-// import { Acct, AcctMobile, Container, Div } from "../../../components";
-// import { Account, Layout, MQ } from "../../../containers";
-// import { API } from "../../../utils";
 
 import './style.css';
 
@@ -91,14 +88,11 @@ class Cats extends React.Component {
   }
 
   editCats = (e) =>  {
-      
-      let target=e.currentTarget.id;
-    console.log('edit cats called...', e.currentTarget, e.currentTarget.id)
+    let target=e.currentTarget.id;
     this.setState({
         target: target,
         editMode: !this.state.editMode
     })
-    console.log(this.state.editMode, this.state.target)
   }
   
   deleteListItem = (e) => {
@@ -106,16 +100,9 @@ class Cats extends React.Component {
     let myArray 
     let newCats = this.state.allCats;
     newCats = newCats.filter(function( obj ) {
-        console.log(obj._id)
-        console.log(parseInt(t))
-        console.log(obj._id !== parseInt(t))
         return obj._id !== parseInt(t);
     });
-    console.log(myArray)
-    // console.log(e.target.value)
-    // console.log(e.target.id)
-    
-    // newCats.splice(e.target.id, 1)
+
     this.setState({
         allCats: newCats
     })
@@ -129,20 +116,20 @@ class Cats extends React.Component {
                         <h3>This is {el.name}</h3>
                         <p> She is a purebred Brittish Shorthair. In this section, I will proceed to tell yo uabout the cats.</p>
                     </td>
-                    <td className="td-btn">
-                        <div>
                             {this.state.target != el._id ? 
-                                <button id={el._id} onClick={this.editCats}><FontAwesomeIcon icon={faEdit} /> </button>
+                                <td className="td-btn">
+                                  <button className="fa-btn" id={el._id} onClick={this.editCats}><FontAwesomeIcon icon={faEdit} /> </button>
+                                  <button className="fa-btn" id={el._id}  onClick={this.deleteListItem}><FontAwesomeIcon icon={faTrashAlt} /></button>
+                                </td>
                             : <div></div>} 
-                            <button id={el._id}  onClick={this.deleteListItem}><FontAwesomeIcon icon={faTrashAlt} /></button>
-                        </div>
-                    </td>
+                            {/* <td className="td-btn"></td> */}
+                   
                     </div>
                 {this.state.target == el._id? (
                 <div>
                 <p>Cat Name: </p>
                 <p>Cat Description: </p>
-                <p><button onClick={this.editCats}>Done Editing</button></p>
+                <p><button className="edit-section-btn" onClick={this.editCats}>Done Editing</button></p>
             </div> ) : <div></div>}
             </tr>
     ))

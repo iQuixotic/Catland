@@ -1,0 +1,1 @@
+export { default as Cat4kGlasses } from './cat4k.jpg';
