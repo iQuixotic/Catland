@@ -2,7 +2,11 @@
     {
         "_id": 1,
         "color":"red",
-        "name":"Ted"
+        "name":"Ted",
+        "cuddly": 5,
+        "playful": 9,
+        "clean": 4,
+        "description": "Cat ipsum dolor sit amet, claws in the eye of the beholder and ignore the human until she needs to get up, then climb on her lap and sprawl cat snacks and you have cat to be kitten me right meow. Try to jump onto window and fall while scratching at wall please let me outside pouty face yay! wait, it's cold out please let me inside pouty face oh, thank you rub against mommy's leg oh it looks so nice out, please let me outside again the neighbor cat was mean to me please let me back inside chew foot side-eyes your jerk other hand while being petted , and i like big cats and i can not lie. Russian blue catasstrophe or jump launch to pounce upon little yarn mouse, bare fangs at toy run hide in litter box until treats are fed, lick butt and make a weird face or i shall purr myself to sleep and twitch tail in permanent irritation."
     },
     {
         "_id": 2,

@@ -1,0 +1,17 @@
+/* .cudly-paws {
+    display: flex;
+} */
+
+.single {
+    /* display: inline; */
+    font-size: 4rem;
+}
+
+.container {
+    width: 70%;
+    margin: 15%;
+}
+
+.individual-line {
+    display: block;
+}

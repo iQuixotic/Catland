@@ -2,7 +2,7 @@ import * as React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
-import data from '../master/cats.json'
+import data from '../../../master/cats.json'
 
 import './style.css';
 
