@@ -1,0 +1,1 @@
+export { default as HalfIcon } from './halfIcon/halfIcon';

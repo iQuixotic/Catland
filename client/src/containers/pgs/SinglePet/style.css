@@ -1,0 +1,29 @@
+.hover-background:hover {
+    color: green;
+    /* background: red; */
+}
+
+
+.hover-background {
+    height: 50px;
+    color: orchid;
+    padding: 5px;
+    /* background: green; */
+}
+
+.single {
+    display: flex;
+    background-color: whitesmoke;
+    color: red;
+    font-size: 30px;
+    margin: 0 15%;
+    width: 70%;
+}
+
+/* .half-icon {
+    background-color: teal;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin: 20px 0 0 15px;
+} */

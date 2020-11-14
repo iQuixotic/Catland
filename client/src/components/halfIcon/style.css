@@ -1,0 +1,24 @@
+.half-icon {
+    padding: 10px 0;
+}
+
+.blue {
+    font-size: 40px;
+    height: 30px;
+    color: orchid;
+    padding: 5px;
+}
+
+.color-block {
+    position: relative;
+    right: 27px;
+    padding: 20px;
+    background-color: whitesmoke;
+    width: 30px;
+    height: 30px;
+}
+
+
+.blue:hover {
+    color: green;
+}

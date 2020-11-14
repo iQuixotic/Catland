@@ -4,7 +4,8 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import { 
   Cats,
-  Main
+  Main, 
+  SinglePet
 } from '../containers';
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
         <div className="App">
           <Route exact={true} path="/" component={Main} />
           <Route exact={true} path="/cats" component={Cats} />
+          <Route exact={true} path="/pet" component={SinglePet} />
         </div>
       </Router>
     );
