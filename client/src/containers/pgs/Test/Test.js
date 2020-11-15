@@ -27,6 +27,7 @@ class TestPage extends React.Component {
             name: data[0].name,
             playful: data[0].playful,
             clean: data[0].clean,
+            cuddly: data[0].cuddly,
             description:data[0].description
         });
       }
@@ -38,7 +39,7 @@ class TestPage extends React.Component {
       getOddState = (arg) => {
           let arr = [];
           for(let i=2;i<=arg;i+=2) {
-              arr.push({icon: <FontAwesomeIcon className="hover-background" icon={faPaw} /> })
+              arr.push({icon: <FontAwesomeIcon className="paw" icon={faPaw} /> })
               console.log(i, arg)
           }
           return arr;
@@ -46,38 +47,38 @@ class TestPage extends React.Component {
   render() {
       // map over multiple volleyballs that hold hover state
       const cuddlyPaws = (
-        <span className="cuddly-paws">
+        <span className="paws cuddly-paws">
                 {this.getOddState(this.state.cuddly).map(el => (  
                     el.icon
                 ))}
-                {this.state.cuddly%2 ? <HalfIcon /> : <div></div>}            
+                {this.state.cuddly%2 ? <HalfIcon cn="paw"/> : <div></div>}            
         </span>
       );
       const cleanPaws = (
-        <span className="clean-paws">
+        <span className="paws clean-paws">
                 {this.getOddState(this.state.clean).map(el => (  
                     el.icon
                 ))}
-                {this.state.clean%2 ? <HalfIcon /> : <span></span>}            
+                {this.state.clean%2 ? <HalfIcon cn="paw"/> : <span></span>}            
         </span>
       );
       const playfulPaws = (
-        <span className="playful-paws">
+        <span className="paws playful-paws">
             {this.getOddState(this.state.playful).map(el => (  
                 el.icon
             ))}
-            {this.state.playful%2 ? <HalfIcon /> : <span></span>}            
+            {this.state.playful%2 ? <HalfIcon cn="paw" /> : <span></span>}            
         </span>
       );
      
     return (
       <div className='single'>
         <div className="container">
-            <div className="indidual-line">{this.state.name}</div>
-            <div className="indidual-line">Cuddly: {cuddlyPaws} {this.state.cuddly/2}</div>
-            <div className="indidual-line">Clean: {cleanPaws} {this.state.clean/2}</div>
-            <div className="indidual-line">Playful: {playfulPaws} {this.state.playful/2}</div>
-            <div className="">Description: {this.state.description} </div>
+            <div className="indidual-line name">{this.state.name}</div>
+            <div className="indidual-line"><span className="category-header">Cuddly:</span> {cuddlyPaws} </div>
+            <div className="indidual-line"><span className="category-header">Clean:</span> {cleanPaws} </div>
+            <div className="indidual-line"><span className="category-header">Playful:</span> {playfulPaws} </div>
+            <div className="desc">Description: {this.state.description} </div>
         </div>
       </div>
     )

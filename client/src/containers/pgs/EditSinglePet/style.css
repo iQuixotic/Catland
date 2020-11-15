@@ -13,7 +13,28 @@
     
 }
 
+.editing-box {
+    height: 400px;
+    width: 100%;
+    border: 1px solid rgb(104, 0, 104);
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+.single .fa-btn {
+    position: absolute;
+    font-size: 1.2rem;
+    padding: 15px 0 0;
+    right: 15%;
+}
+
 .paw {
+    padding: 10px 10px 0;
+}
+
+.clear-paw {
+    /* background-color: gray; */
+    color: rgb(197, 197, 197);
     padding: 10px 10px 0;
 }
 
@@ -24,6 +45,10 @@
 .container {
     width: 70%;
     margin: 20px 15%;
+    border: 1px solid gray;
+    padding: 2rem;
+    border-radius: 10px;
+    /* box-shadow: 1px 0 10px 0 black; */
 }
 
 .single .name {

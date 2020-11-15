@@ -1,21 +1,19 @@
 .half-icon {
-    padding: 10px 0;
+    /* padding: 10px 0; */
 }
 
 .blue {
-    font-size: 40px;
-    height: 30px;
-    color: orchid;
-    padding: 5px;
+    /* font-size: 40px; */
+    /* height: 30px; */
+    /* color: orchid; */
+    /* padding: 5px; */
 }
 
 .color-block {
     position: relative;
-    right: 27px;
-    padding: 20px;
+    right: 30px;
+    padding: 10px;
     background-color: whitesmoke;
-    width: 30px;
-    height: 30px;
 }
 
 
