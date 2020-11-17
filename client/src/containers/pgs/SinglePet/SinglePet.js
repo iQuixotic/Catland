@@ -2,16 +2,15 @@ import * as React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw } from '@fortawesome/free-solid-svg-icons'
 import data from '../../../master/cats.json'
+import { Navbar, HalfIcon } from '../../../components'
 import './style.css';
-// import '../../../master/main.css';
-import { HalfIcon } from "../../../components";
 
 class SinglePet extends React.Component {
     state = {
         _id: 1,
         name: 'f',
         color: '0',
-        cuddly: 5,
+        cuddly: 6,
         playful: 5,
         clean: 5,
         description:''
@@ -27,6 +26,7 @@ class SinglePet extends React.Component {
             name: data[0].name,
             playful: data[0].playful,
             clean: data[0].clean,
+            cuddly: data[0].cuddly,
             description:data[0].description
         });
       }
@@ -72,6 +72,7 @@ class SinglePet extends React.Component {
      
     return (
       <div className='single'>
+        <Navbar/>
         <div className="container">
             <div className="indidual-line name">{this.state.name}</div>
             <div className="indidual-line"><span className="category-header">Cuddly:</span> {cuddlyPaws} </div>

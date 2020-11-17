@@ -40,6 +40,13 @@
 
 .single .desc {
     font-size: 1.1rem;
+    font-weight: 700px;
+}
+
+.single .desc span{
+    font-size: 1.1rem;
+    font-weight: 700;
+    /* color: red; */
 }
 
 .container {
@@ -51,15 +58,25 @@
     /* box-shadow: 1px 0 10px 0 black; */
 }
 
+.ratings {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
 .single .name {
     font-size: 3rem;
     color: green;
+    padding: 0 0 20px;
+}
+
+.ratings-area {
+    padding: 15px 0 ;
 }
 
 .single .category-header {
     padding: 0 0 10px;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 500 !important;
+    font-size: 1.1rem;
 }
 
 .individual-line {

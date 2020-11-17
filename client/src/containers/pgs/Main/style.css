@@ -3,48 +3,7 @@ img {
     margin: 0 10%;
     border-radius: 50px 500px 150px;
 }
-/* 
+
 .main {
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0; */
-    /* background: rgb(1, 1, 36); */
-/* } */
-
-nav {
-    /* position: absolute; */
-    left: 20%;
-    /* top: 20px; */
-    display: flex;
-    justify-content: space-evenly;
-    padding: 15px 0 5px;
-    border-bottom: 1px solid gray;
-    /* flex-direction: column; */
-    /* height: 320px; */
-    /* margin: 150px 50px; */
-    /* color: white; */
-    /* background-color: green; */
+    font-size: 1.5rem;
 }
-
-.nav-item {
-    font-size: 22px;
-    /* padding: 7px 0px 7px 80px; */
-    /* -ms-transform: skewY(340deg);  */
-    /* transform: skewY(340deg); */
-    /* color: rgb(218, 218, 218); */
-    /* background-color: rgba(124, 0, 128, 0.4); */
-    /* width: 250px; */
-    /* border-radius: 100px 50px; */
-}
-
-.nav-item { 
-    /* color: whitesmoke; */
-    /* color: blue; */
-    /* text-shadow:  2px 2px orange; */
-    
-    /* text-shadow:  1px 2px orange; */
-    /* box-shadow: 5px 5px 10px orchid; */
-}   

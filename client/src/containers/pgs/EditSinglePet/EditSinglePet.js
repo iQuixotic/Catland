@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import data from '../../../master/cats.json'
 import './style.css';
-import { HalfIcon } from "../../../components";
+import { HalfIcon, Navbar } from "../../../components";
 
 let arr, newArr =[];
 class EditSinglePet extends React.Component {
@@ -164,19 +164,21 @@ class EditSinglePet extends React.Component {
      
     return (
       <div className='single'>
-         
+         <Navbar/>
         <div className="container">
           <button className="fa-btn"  onClick={this.editCats}><FontAwesomeIcon icon={faEdit} /> </button>
           {/* <button className="fa-btn"  onClick={this.deleteListItem}><FontAwesomeIcon icon={faTrashAlt} /></button> */}
             <div className="indidual-line name">{this.state.name}</div>
-            <div>Your Ratings:</div>
-            <div className="indidual-line"><span className="category-header">Cuddly:</span> 
-              {this.state.editMode ? <EditPaws fieldName={"cuddly"} editing={this.state.cuddly}/> : <Paws fieldName={this.state.cuddly} />} </div>
-            <div className="indidual-line"><span className="category-header">Clean:</span> 
-              {this.state.editMode ? <EditPaws fieldName={"clean"} editing={this.state.clean}/> : <Paws fieldName={this.state.clean} />} </div>
-            <div className="indidual-line"><span className="category-header">Playful:</span> 
-              {this.state.editMode ? <EditPaws fieldName={"playful"} editing={this.state.playful}/> : <Paws fieldName={this.state.playful} />} </div>
-            <div className="desc">Description: {!this.state.editMode ? (<div>{this.state.description}</div>) : (
+           <div className="ratings-area">
+              <div className="ratings">Your Ratings:</div>
+              <div className="indidual-line"><span className="category-header">Cuddly:</span> 
+                {this.state.editMode ? <EditPaws fieldName={"cuddly"} editing={this.state.cuddly}/> : <Paws fieldName={this.state.cuddly} />} </div>
+              <div className="indidual-line"><span className="category-header">Clean:</span> 
+                {this.state.editMode ? <EditPaws fieldName={"clean"} editing={this.state.clean}/> : <Paws fieldName={this.state.clean} />} </div>
+              <div className="indidual-line"><span className="category-header">Playful:</span> 
+                {this.state.editMode ? <EditPaws fieldName={"playful"} editing={this.state.playful}/> : <Paws fieldName={this.state.playful} />} </div>
+           </div>
+            <div className="desc"><span>Description: </span>{!this.state.editMode ? (<div>{this.state.description}</div>) : (
               <textarea onChange={this.editDescription} className="editing-box">{this.state.description}</textarea>
             )} </div>
         </div>

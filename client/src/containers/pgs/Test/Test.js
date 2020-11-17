@@ -4,7 +4,7 @@ import { faPaw } from '@fortawesome/free-solid-svg-icons'
 import data from '../../../master/cats.json'
 import './style.css';
 // import '../../../master/main.css';
-import { HalfIcon } from "../../../components";
+import { HalfIcon, Navbar } from "../../../components";
 
 class TestPage extends React.Component {
     state = {
@@ -73,6 +73,7 @@ class TestPage extends React.Component {
      
     return (
       <div className='single'>
+        <Navbar/>
         <div className="container">
             <div className="indidual-line name">{this.state.name}</div>
             <div className="indidual-line"><span className="category-header">Cuddly:</span> {cuddlyPaws} </div>

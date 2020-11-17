@@ -1,10 +1,15 @@
 html, textarea {
   font-size: 10px;
   background-color: whitesmoke;
-  font-family: 'El Messiri', sans-serif;
+  /* font-family: 'El Messiri', sans-serif; */
+  line-height: 40px;
   font-weight: 500;
+    font-family: 'Belleza', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
   /* .App {
   text-align: center;
 }

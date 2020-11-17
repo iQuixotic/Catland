@@ -1,0 +1,11 @@
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 0 5px;
+    border-bottom: 1px solid gray;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+    font-family: 'Hind', sans-serif;
+}
