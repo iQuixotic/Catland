@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw } from '@fortawesome/free-solid-svg-icons'
 import data from '../../../master/cats.json'
 import { Navbar, HalfIcon } from '../../../components'
+import { APICATS } from "../../../api"
 import './style.css';
 
 class SinglePet extends React.Component {
@@ -17,8 +18,22 @@ class SinglePet extends React.Component {
         
     }
     componentDidMount = () => {
-        this.getCat ()
-      }
+      const myProps = this.props
+      console.log("------------", myProps.match.params.id)
+      APICATS.getSingleCat(myProps.match.params.id)
+        // .then(res => res.json())
+        // .then(res => console.log(res, "name", res.data[0].name, "playful", res.playful))
+        .then(res => this.setState({  
+          _id: res.data[0]._id,
+          name: res.data[0].name,
+          playful: res.data[0].playful,
+          clean: res.data[0].clean,
+          cuddly: res.data[0].cuddly,
+          description: data[0].description
+         }))
+        .catch(err => { throw(err) });
+          // this.getCat ()
+        }
 
       getCat = () => {
         this.setState({

@@ -19,18 +19,45 @@ export default {
 
     // GET all cats in the database
     getAll: async (req: Request, res: Response) => {
-        try {                 
-            const x = await db.query(QueryMaker.getAll('cats'))
-            res.json(x.rows);
+
+        try {
+            // gets passed to the query
+            const joinFieldsOnArr = ['cats._id',
+                'cats.name',  'cats.picture', 
+                'ratings.age', 
+                'ratings.cuddly', 'ratings.playful',
+                'ratings.clean', 'ratings.dog_friendly']; 
+
+            // query JOIN reimbursements.author to author._id
+            const x = await db.query(
+                QueryMaker.getJoinedTbl('cats', joinFieldsOnArr, 
+                'ratings', 'cats.ratings_id', 
+                'ratings._id'));
+                
+                console.log(x.rows)
+            return res.json(x.rows);
         } catch (err) { throw err; }
     },
 
     // READ a single cat
     getById: async (req: Request, res: Response) => {
         try {
-            const x = await db.query(QueryMaker.getOne('cats', '_id'), [req.params.catId]);
-            res.json(x.rows[0]);
-        }  catch (err) { throw err; }      
+            // gets passed to the query
+            const joinFieldsOnArr = ['cats._id',
+                'cats.name',  'cats.picture', 
+                'ratings.age', 
+                'ratings.cuddly', 'ratings.playful',
+                'ratings.clean', 'ratings.dog_friendly']; 
+
+            // query JOIN reimbursements.author to author._id
+            const x = await db.query(
+                QueryMaker.getSingleJoinedTbl('cats', joinFieldsOnArr, 
+                'ratings', 'cats.ratings_id', 
+                'ratings._id'), [req.params.catId]);
+                
+                console.log(x.rows)
+            return res.json(x.rows);
+        } catch (err) { throw err; }
     },
 
      // UPDATE a new db entry  

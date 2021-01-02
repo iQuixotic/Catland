@@ -19,7 +19,7 @@ class App extends React.Component {
         <div className="App">
           <Route exact={true} path="/" component={Main} />
           <Route exact={true} path="/cats" component={Cats} />
-          <Route exact={true} path="/pet" component={SinglePet} />
+          <Route exact={true} path="/pet/:id" component={SinglePet} />
           <Route exact={true} path="/test" component={TestPage} />
           <Route exact={true} path="/edit/pet" component={EditSinglePet} />
         </div>
