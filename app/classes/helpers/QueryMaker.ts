@@ -87,6 +87,11 @@ class QueryMaker {
           return queryString;
     }    
 
+    // delete by some queryKey
+    static deleteOne(tableName, queryKey) {
+      return `DELETE FROM ${tableName} WHERE ${queryKey} = $1;`;
+    }
+
 }
 
 export default QueryMaker;
