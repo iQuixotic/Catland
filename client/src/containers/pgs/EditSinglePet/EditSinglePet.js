@@ -4,6 +4,8 @@ import { faPaw, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import data from '../../../master/cats.json'
 import './style.css';
 import { HalfIcon, Navbar } from "../../../components";
+import { APICATS } from "../../../api";
+import { isConstructorDeclaration } from "typescript";
 
 let arr, newArr =[];
 class EditSinglePet extends React.Component {
@@ -20,8 +22,19 @@ class EditSinglePet extends React.Component {
         
     }
     componentDidMount = () => {
-        this.getRatings ()
-      }
+      const myProps = this.props
+      console.log("------------", myProps.match.params.id)
+      APICATS.getSingleCat(myProps.match.params.id)
+        .then(res => this.setState({  
+          _id: res.data[0]._id,
+          name: res.data[0].name,
+          playful: res.data[0].playful,
+          clean: res.data[0].clean,
+          cuddly: res.data[0].cuddly,
+          description: data[0].description
+         }))
+        .catch(err => { throw(err) });
+        }
 
       getRatings = () => {
         this.setState({
@@ -40,7 +53,7 @@ class EditSinglePet extends React.Component {
         return arr.map(el=>{
           if(parseInt(el.icon.props.id.substring(9,7))<hoveringOver) {
             newArr.push(el)
-            console.log(arr.length-newArr.length)
+            // console.log(arr.length-newArr.length)
           }
         })
       }
@@ -56,27 +69,28 @@ class EditSinglePet extends React.Component {
       }
   
       getEditIcons = (fieldName, arg) => {
-        console.log("lfdsa", arg)
+        // console.log("lfdsa", arg)
         arr = [];
         for(let i=2;i<=10;i+=2) {
-            if (i<arg) {
+            if (i<=arg) {
               arr.push({icon: <FontAwesomeIcon 
-                onClick={() => this.setArgState(fieldName, i+2)}
+                onClick={() => this.setArgState(fieldName, i)}
                 id={"faIcon-"+i} 
                 className="paw" icon={faPaw} /> })
               } else {
               arr.push({icon: <FontAwesomeIcon 
                 id={"faIcon-"+i} 
                 className="clear-paw"
-                onClick={() => this.setArgState(fieldName, i+2)}
+                onClick={() => this.setArgState(fieldName, i)}
                 icon={faPaw} /> })
             }
         }
+        // console.log(this.state)
         return arr;
     }
       
     setArgState = (fieldName, arg2) => {
-      console.log(fieldName, arg2)
+      // console.log(fieldName, arg2)
       this.setState({
         [fieldName]: arg2,
       })
@@ -101,15 +115,25 @@ class EditSinglePet extends React.Component {
   //   })
   }
 
+  submitUpdateHandler = () => {
+    let data = {...this.state}
+    
+    console.log(data)
+    APICATS.updateSingleCat(data)
+    .then(res =>  console.log(res))
+  }
+
       getOddState = (arg) => {
+        console.log("this is the areg", arg)
           arr = [];
           for(let i=2;i<=10;i+=2) {
-              if (i<arg) {
+              if (i<=arg) {
                 arr.push({icon: <FontAwesomeIcon 
                   onClick={() => this.setArgState(i)}
                   id={"faIcon-"+i} 
                   className="paw" icon={faPaw} /> })
-                continue;
+                // continue;
+                console.log("this is the i at now:" , i, arg)
               } else {
                 arr.push({icon: <FontAwesomeIcon 
                   id={"faIcon-"+i} 
@@ -179,7 +203,10 @@ class EditSinglePet extends React.Component {
                 {this.state.editMode ? <EditPaws fieldName={"playful"} editing={this.state.playful}/> : <Paws fieldName={this.state.playful} />} </div>
            </div>
             <div className="desc"><span>Description: </span>{!this.state.editMode ? (<div>{this.state.description}</div>) : (
-              <textarea onChange={this.editDescription} className="editing-box">{this.state.description}</textarea>
+              <div>
+                <textarea onChange={this.editDescription} className="editing-box">{this.state.description}</textarea>
+                <button className="submit-edits" onClick={this.submitUpdateHandler}>Submit</button>
+              </div>
             )} </div>
         </div>
       </div>

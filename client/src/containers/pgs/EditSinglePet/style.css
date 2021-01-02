@@ -82,3 +82,12 @@
 .individual-line {
     display: block;
 }
+
+.submit-edits {
+    color: white;
+    padding: 8px 17px;
+    background: blue;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+}

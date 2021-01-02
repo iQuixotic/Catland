@@ -6,8 +6,12 @@ export default {
     // READ all accounts from the database
     getSingleCat:(id) => {
         return axios.get('/cats/' + id);
-    }
+    },
 
+    updateSingleCat:(data) => {
+        console.log("data", data);
+        return axios.put('/cats/' + data._id, data)
+    }
 //     // READ to check for duplicate account numbers
 //     // getAcctNums: () => {
 //     //     console.log('API route for reading acct numbers');        

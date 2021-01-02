@@ -21,8 +21,6 @@ class SinglePet extends React.Component {
       const myProps = this.props
       console.log("------------", myProps.match.params.id)
       APICATS.getSingleCat(myProps.match.params.id)
-        // .then(res => res.json())
-        // .then(res => console.log(res, "name", res.data[0].name, "playful", res.playful))
         .then(res => this.setState({  
           _id: res.data[0]._id,
           name: res.data[0].name,
@@ -32,7 +30,6 @@ class SinglePet extends React.Component {
           description: data[0].description
          }))
         .catch(err => { throw(err) });
-          // this.getCat ()
         }
 
       getCat = () => {

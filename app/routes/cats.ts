@@ -9,7 +9,7 @@ router.route('/')
 
 router.route('/:catId')
     .get(catsController.getById)
-    .patch(catsController.updateOne)
+    .put(catsController.updateOne)
     .delete(catsController.deleteOne);
 
 export default router;

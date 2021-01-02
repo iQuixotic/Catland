@@ -1,7 +1,7 @@
 // imports
 import { Request, Response } from 'express';
 import db from '../config/connection';
-import { QueryMaker, Cat } from '../classes';
+import { QueryMaker, Cat, Rating } from '../classes';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 export default {
@@ -55,21 +55,27 @@ export default {
                 'ratings', 'cats.ratings_id', 
                 'ratings._id'), [req.params.catId]);
                 
-                console.log(x.rows)
             return res.json(x.rows);
         } catch (err) { throw err; }
     },
 
      // UPDATE a new db entry  
      updateOne: async (req: Request, res: Response) => {
-        try {            
+        try {         
             const x = await db.query( QueryMaker.getOne('cats', '_id'), [req.params.catId]);
+            const rat = x.rows[0].ratings_id
+            const y = await db.query( QueryMaker.getOne('ratings', '_id'), [rat]);
             const cat = new Cat({...x.rows[0], ...req.body});
-            const myKeys = Object.keys(cat);
-            const myVals = Object.values(cat);
-            const valsAndID =  [req.params.catId, ...myVals]
-            await db.query( QueryMaker.setOne('cats', '_id', myKeys.length, myKeys), valsAndID); 
-            res.json({message: 'cat updated !!'});
+            const ratings = new Rating({...y.rows[0], ...req.body})
+            const myCatKeys = [x.rows[0]._id, ...Object.keys(cat)];
+            const myCatVals = Object.values(cat);
+            const myRatingKeys = [x.rows[0].ratings_id, ...Object.keys(ratings)];
+            const myRatingVals = Object.values(ratings);
+            const catValsAndID =  [req.params.catId, ...myCatVals]
+            const ratingValsAndID =  [rat, ...myRatingVals]
+            await db.query( QueryMaker.setOne('cats', '_id', myCatKeys.length-1, myCatKeys), catValsAndID); 
+            await db.query( QueryMaker.setOne('ratings', '_id', myRatingKeys.length-1, myRatingKeys), ratingValsAndID); 
+            return res.json({message: 'cat updated !!'});
         } catch (err) { throw err }; 
     },
 
